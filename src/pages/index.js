@@ -25,12 +25,12 @@ const Index = ({ data }) => (
           __html: data.aboutJson.content.childMarkdownRemark.html,
         }}
       />
-      <Box>
+      <div style={{ padding: '1rem 6rem' }}>
         <Img
           fluid={data.homeJson.product.childImageSharp.fluid}
           alt="Bottles of our herbal oral health spray"
         />
-      </Box>
+      </div>
     </About>
 
     <IOExample />
@@ -58,7 +58,7 @@ export const query = graphql`
       title
       product {
         childImageSharp {
-          fluid(maxHeight: 768, quality: 90) {
+          fluid(maxHeight: 500, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
