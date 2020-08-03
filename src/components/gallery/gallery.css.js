@@ -7,7 +7,8 @@ export const Container = styled.div`
   grid-gap: 4rem;
   padding: 0 4rem;
   margin: 2rem 0;
-
+  font-family: Nunito;
+  text-align: center;
   ${MEDIA.TABLET`
     display: block;
   `};

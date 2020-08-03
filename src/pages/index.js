@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Box from 'components/box';
+import About from 'components/about';
 import Title from 'components/title';
 import Gallery from 'components/gallery';
 import IOExample from 'components/io-example';
-import Modal from 'containers/modal';
+import Img from 'gatsby-image';
+import { withPrefix } from 'gatsby';
+
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
@@ -14,19 +17,32 @@ const Index = ({ data }) => (
       <Title as="h2" size="large">
         {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
       </Title>
-      <Modal>
-        <video
-          src="https://i.imgur.com/gzFqNSW.mp4"
-          playsInline
-          loop
-          autoPlay
-          muted
-        />
-      </Modal>
     </Box>
     <Gallery items={data.homeJson.gallery} />
-    <div style={{ height: '50vh' }} />
+    <About>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.aboutJson.content.childMarkdownRemark.html,
+        }}
+      />
+      <Box>
+        <Img
+          fluid={data.homeJson.product.childImageSharp.fluid}
+          alt="Bottles of our herbal oral health spray"
+        />
+      </Box>
+    </About>
+
     <IOExample />
+    <About>
+      <div>
+        <h2>
+          Other inquiries by{' '}
+          <a href="mailto:plantainprojectpdx@gmail.com">email </a>.
+        </h2>
+      </div>
+      <img src={withPrefix('/logo.png')} alt="Logo" />
+    </About>
   </Layout>
 );
 
@@ -40,6 +56,13 @@ export const query = graphql`
   query HomepageQuery {
     homeJson {
       title
+      product {
+        childImageSharp {
+          fluid(maxHeight: 768, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       content {
         childMarkdownRemark {
           html
@@ -55,6 +78,14 @@ export const query = graphql`
               ...GatsbyImageSharpFluid_withWebp
             }
           }
+        }
+      }
+    }
+    aboutJson {
+      title
+      content {
+        childMarkdownRemark {
+          html
         }
       }
     }

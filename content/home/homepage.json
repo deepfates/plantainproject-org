@@ -1,19 +1,20 @@
 {
   "title": "Home",
+  "product": "../images/gallery/product.jpg",
   "content": "intro.md",
   "gallery": [{
-    "title": "React Context",
-    "copy": "For global styles.",
-    "image": "../images/gallery/react-context.jpg"
+    "title": "Grow",
+    "copy": "herbal medicine in cities",
+    "image": "../images/gallery/gardening.png"
   },
   {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
+    "title": "Process",
+    "copy": "sharing skills and knowledge",
+    "image": "../images/gallery/processing.png"
   },
   {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
+    "title": "Distribute",
+    "copy": "to grassroots efforts",
+    "image": "../images/gallery/elderberries.png"
   }]
 }
