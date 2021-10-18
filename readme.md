@@ -1,9 +1,11 @@
 # Plantain Project website
 
 Code for the website at [https://www.plantainproject.org](https://www.plantainproject.org)
-This project is forked from the following Gatsby template. Produced by @deepfates as a volunteer contribution.
+Produced by @deepfates as a volunteer contribution.
 
 **To develop locally, you'll need `node` >=10.0.0.0. You can change your node version with `nvm`.**
+
+This project is forked from the following Gatsby template.
 
 ---
 
