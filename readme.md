@@ -1,3 +1,12 @@
+# Plantain Project website
+
+Code for the website at [https://www.plantainproject.org](https://www.plantainproject.org)
+This project is forked from the following Gatsby template. Produced by @deepfates as a volunteer contribution.
+
+
+---
+
+
 <p align="center">
   <a href="https://github.com/fabe/gatsby-universal">
     <img
